@@ -68,4 +68,43 @@ class ExpenseCategory(models.Model):
     def __str__(self) -> str:
         return self.name
 
+class Income(models.Model):
+    """Income object."""
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+    title = models.CharField(max_length=255)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    category = models.ForeignKey(
+        IncomeCategory,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True
+    )
+    description = models.TextField(blank=True, null=True)
+    date = models.DateField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return f"{self.title}: {self.amount}"
+
+class Expense(models.Model):
+    """Expense object."""
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+    title = models.CharField(max_length=255)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    category = models.ForeignKey(
+        ExpenseCategory,
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True
+    )
+    description = models.TextField(blank=True, null=True)
+    date = models.DateField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return f"{self.title}: {self.amount}"
 
