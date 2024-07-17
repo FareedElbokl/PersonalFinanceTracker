@@ -34,8 +34,6 @@ class UserManager(BaseUserManager):
         return user
 
 
-
-
 class User(AbstractBaseUser, PermissionsMixin):
     """User in the system"""
     email = models.EmailField(max_length=255, unique=True)
@@ -46,3 +44,28 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager() # assigns a user manager to this User model.
 
     USERNAME_FIELD = "email"
+
+
+class IncomeCategory(models.Model):
+    """Income category object."""
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+    name = models.CharField(max_length=100)
+
+    def __str__(self) -> str:
+        return self.name
+
+class ExpenseCategory(models.Model):
+    """Expense Category object"""
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+    name = models.CharField(max_length=100)
+
+    def __str__(self) -> str:
+        return self.name
+
+

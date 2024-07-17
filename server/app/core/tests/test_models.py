@@ -53,3 +53,37 @@ class ModelTests(TestCase):
 
         self.assertTrue(user.is_superuser)
         self.assertTrue(user.is_staff)
+
+    def test_create_income_category(self):
+        """Test creating an income category is successful"""
+
+        # First create an authenticated user to test with
+        user  = get_user_model().objects.create_user(
+            "test@example.com",
+            "testpass123"
+        )
+
+        # Now attempt to create an income category
+        income_category = models.IncomeCategory.objects.create(
+            user = user,
+            name = "Test Income Category"
+        )
+
+        self.assertEqual(str(income_category), income_category.name)
+
+    def test_create_expense_category(self):
+        """Test creating an expense category is successfull"""
+
+        # First create an authenticated user to test with
+        user = get_user_model().objects.create_user(
+            "test@example.com",
+            "testpass123"
+        )
+
+        # Now attempt create an expense category
+        expense_category = models.ExpenseCategory.objects.create(
+            user = user,
+            name = "Test expense category"
+        )
+
+        self.assertEqual(str(expense_category), expense_category.name)
