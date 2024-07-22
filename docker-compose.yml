@@ -3,13 +3,15 @@ version: "3.9"
 services:
   app:
     build:
-      context: .
+      context: server
       args:
         - DEV=true
     ports:
       - "8000:8000"
+    networks:
+      - node-network
     volumes:
-      - ./app:/app
+      - ./server/app:/app
     command: >
       sh -c "python manage.py wait_for_db &&
              python manage.py migrate &&
@@ -22,6 +24,21 @@ services:
     depends_on:
       - db
 
+  react-front-end:
+    build:
+      context: client
+    container_name: react-front-end
+    working_dir: /usr/src/app
+    networks:
+      - node-network
+    volumes:
+      - ./client:/usr/src/app
+      - /usr/src/app/node_modules
+    tty: true
+    ports:
+      - "5173:5173"
+    command: npm run dev
+
   db:
     image: postgres:13-alpine
     volumes:
@@ -30,6 +47,12 @@ services:
       - POSTGRES_DB=devdb
       - POSTGRES_USER=devuser
       - POSTGRES_PASSWORD=changeme
+    networks:
+      - node-network
 
 volumes:
   dev-db-data:
+
+networks:
+  node-network:
+    driver: bridge
