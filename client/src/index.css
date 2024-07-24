@@ -1,68 +1,117 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
+  font-family: "Montserrat", sans-serif;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.collapsed .sidebar {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 0.3s ease;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.collapsed .sidebar ul {
+  display: none; /* Hide the text when the sidebar is collapsed */
+}
+
+.collapsed .sidebar:hover {
+  width: 65px;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f7f9fc; /* Light background color */
+  color: #333; /* Darker text color for contrast */
+  transition: width 0.3s ease;
+  padding: 20px 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  font-family: "Montserrat", sans-serif;
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+  border-radius: 20px; /* Rounded corners for content area */
+}
+
+.toggle-btn {
+  background: #28a745; /* Green background color */
+  border: none;
+  color: white;
+  font-size: 20px; /* Slightly smaller font size */
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.toggle-btn:hover {
+  background: #218838; /* Darker green on hover */
+  transform: scale(1.1);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #ffffff; /* White background color for content */
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+  border-radius: 20px; /* Rounded corners for content area */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+li {
+  padding: 15px 20px;
+  margin: 10px 0;
+  background: #ffffff; /* White background for list items */
+  border: 3px solid #e0e0e0; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  align-items: center;
+  font-weight: 450;
+}
+
+li span {
+  flex: 1;
+  transition: transform 0.3s ease;
+}
+
+li:hover {
+  background: #f0f0f0; /* Light gray on hover */
+  transform: translateX(5px); /* Translate smoothly rightwards on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+}
+
+li:hover span {
+  transform: translateX(5px); /* Text translates rightwards smoothly */
+}
+
+/* Remove default link styling */
+.sidebar a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent (li) */
+}
+
+.sidebar a:hover {
+  color: inherit; /* Ensure link color on hover matches parent (li) */
 }

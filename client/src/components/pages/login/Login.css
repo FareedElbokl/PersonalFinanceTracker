@@ -1,0 +1,121 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f7f9fc; /* Background color to match sidebar */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.login-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333; /* Darker text color */
+}
+
+.login-form {
+  background-color: #ffffff; /* White background for form */
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%;
+  max-width: 400px; /* Max width for larger screens */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px; /* Rounded corners */
+  box-sizing: border-box;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-container input {
+  padding-right: 40px; /* Space for the toggle button */
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333; /* Icon color */
+  padding: 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-password:hover {
+  color: #28a745; /* Change color on hover */
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #28a745; /* Green background color */
+  border: none;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.size-6 {
+  width: 24px;
+  height: 24px;
+}
+
+.registration-link,
+.back-to-home {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.registration-link p,
+.back-to-home p {
+  margin: 0;
+  color: #333;
+}
+
+.registration-link .link,
+.back-to-home .link {
+  color: #28a745; /* Match the green color */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.registration-link .link:hover,
+.back-to-home .link:hover {
+  text-decoration: underline; /* Underline on hover */
+}
