@@ -8,10 +8,11 @@ body {
 .app {
   display: flex;
   height: 100vh;
+  background: #f8f8ff;
 }
 
 .collapsed .sidebar {
-  width: 60px;
+  width: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +24,7 @@ body {
 }
 
 .collapsed .sidebar:hover {
-  width: 65px;
+  width: 50px;
 }
 
 .sidebar {
@@ -31,15 +32,17 @@ body {
   background-color: #f7f9fc; /* Light background color */
   color: #333; /* Darker text color for contrast */
   transition: width 0.3s ease;
-  padding: 20px 10px;
+  padding: 20px 18px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   font-family: "Montserrat", sans-serif;
   box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
   border-radius: 20px; /* Rounded corners for content area */
+  margin: 10px;
+  border: 1px solid rgba(207, 216, 220, 0.5); /* Lighter, more subtle border */
 }
 
 .toggle-btn {
-  background: #28a745; /* Green background color */
+  background: #37474f; /* Dark grey background color */
   border: none;
   color: white;
   font-size: 20px; /* Slightly smaller font size */
@@ -53,7 +56,7 @@ body {
 }
 
 .toggle-btn:hover {
-  background: #218838; /* Darker green on hover */
+  background: #263238; /* Darker grey on hover */
   transform: scale(1.1);
 }
 
@@ -69,6 +72,8 @@ body {
   background-color: #ffffff; /* White background color for content */
   box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
   border-radius: 20px; /* Rounded corners for content area */
+  margin: 10px;
+  border: 1px solid rgba(207, 216, 220, 0.5); /* Lighter, more subtle border */
 }
 
 ul {
@@ -80,12 +85,12 @@ ul {
 li {
   padding: 15px 20px;
   margin: 10px 0;
-  background: #ffffff; /* White background for list items */
-  border: 3px solid #e0e0e0; /* Light border */
-  border-radius: 8px; /* Rounded corners */
+  background: none; /* Remove background color for non-active items */
+  border: 3px solid #e0e0e0;
+  border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   font-weight: 450;
@@ -97,13 +102,23 @@ li span {
 }
 
 li:hover {
-  background: #f0f0f0; /* Light gray on hover */
-  transform: translateX(5px); /* Translate smoothly rightwards on hover */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+  background: #f0f0f0;
+  transform: translateX(5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 li:hover span {
-  transform: translateX(5px); /* Text translates rightwards smoothly */
+  transform: translateX(5px);
+}
+
+/* Add this CSS to style the active page link */
+a.active li {
+  background: #cfd8dc; /* Soft grey background color for active link */
+  color: #37474f; /* Dark grey text color for active link */
+}
+
+a.active li:hover {
+  background: #b0bec5; /* Slightly darker grey on hover */
 }
 
 /* Remove default link styling */

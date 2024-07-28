@@ -1,0 +1,68 @@
+.dashboard-content-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 15px;
+  border: 2px solid red;
+}
+
+.data-and-chart-container {
+  border: 2px solid blue;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: flex-start;
+  margin-top: 15px;
+}
+
+.data-container {
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 40vw;
+}
+
+.income-expense-display-container {
+  border: 2px solid black;
+  height: 35%;
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.total-income-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 100px;
+  margin: 20px;
+  background-color: #f8f9fa;
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #155724;
+  transition: transform 0.2s ease;
+}
+
+.total-expense-container {
+  padding: 0px 10px;
+  color: #e57373;
+}
+
+.total-income-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.categories-display-container {
+  border: 2px solid black;
+  height: 65%;
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+}

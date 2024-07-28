@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Navbar from "../../navbar/Navbar";
-import DashboardContent from "./DashboardContent";
-import "./Dashboard.css";
+import TransactionsContent from "./TransactionsContent";
+import "./Transactions.css";
 
-const Dashboard = (props) => {
+const Transactions = (props) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleSidebar = () => {
@@ -18,12 +18,12 @@ const Dashboard = (props) => {
         setAuth={props.setAuth}
       ></Navbar>
       <div className="content">
-        <DashboardContent
+        <TransactionsContent
           isAuthenticated={props.isAuthenticated}
-        ></DashboardContent>
+        ></TransactionsContent>
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default Transactions;

@@ -7,10 +7,10 @@ function LogoutButton(props) {
     // Clear the token from local storage
     localStorage.removeItem("token");
 
+    location.reload();
+
     // Update the auth state
     props.setAuth(false);
-
-    location.reload();
   };
 
   return (

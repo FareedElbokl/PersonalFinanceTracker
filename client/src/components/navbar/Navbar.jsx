@@ -1,8 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import LogoutButton from "./LogoutButton";
 
 const Navbar = (props) => {
+  const location = useLocation();
+  const activePage = location.pathname;
+
   return (
     <div className="sidebar">
       <button
@@ -25,9 +28,24 @@ const Navbar = (props) => {
         </svg>
       </button>
       <ul>
-        <li>Income</li>
-        <li>Expense</li>
-        <li>All Transactions</li>
+        <Link to="/" className={activePage === "/" ? "active" : ""}>
+          <li>Dashboard</li>
+        </Link>
+        <Link to="/income" className={activePage === "/income" ? "active" : ""}>
+          <li>Incomes</li>
+        </Link>
+        <Link
+          to="/expense"
+          className={activePage === "/expense" ? "active" : ""}
+        >
+          <li>Expenses</li>
+        </Link>
+        <Link
+          to="/transactions"
+          className={activePage === "/transactions" ? "active" : ""}
+        >
+          <li>All Transactions</li>
+        </Link>
         {!props.isAuthenticated ? (
           <Link to="/login">
             <li>Sign in</li>

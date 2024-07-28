@@ -1,0 +1,302 @@
+.income-content-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: 15px;
+}
+
+.total-income {
+  color: #2e8b57;
+  height: 9vh;
+  background-color: #f7f9fc;
+  border-radius: 20px;
+  border: 2px solid #f0efe7;
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: xx-large;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  min-height: 80px;
+}
+
+.create-display-container {
+  display: flex;
+  align-items: flex-start; /* Align items at the start of the container */
+  justify-content: space-around;
+  overflow: auto;
+  flex-wrap: wrap;
+  height: calc(
+    100vh - 9vh - 40px
+  ); /* Subtract height of total income and margin/padding */
+  margin-top: 20px;
+  max-height: 100%;
+}
+
+.create-income-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff; /* White background for form */
+  border: 1px solid rgba(207, 216, 220, 0.5); /* Subtle border */
+  border-radius: 20px; /* Rounded corners */
+  padding: 20px; /* Padding inside the form */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%; /* Full width of parent container */
+  max-width: 40%; /* Limit the maximum width */
+}
+
+.create-income-container input,
+.create-income-container select,
+.create-income-container textarea {
+  border: 1px solid #e0e0e0; /* Light grey border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px; /* Padding inside inputs */
+  font-size: 16px; /* Font size */
+  margin-bottom: 15px; /* Space between inputs */
+  width: 100%; /* Full width of form */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.create-income-container textarea {
+  resize: vertical; /* Allow resizing only vertically */
+  min-height: 100px; /* Minimum height */
+}
+
+.create-income-container button {
+  background-color: #37474f; /* Dark grey background */
+  color: #ffffff; /* White text */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px 15px; /* Padding inside button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s ease; /* Smooth background transition */
+  margin-top: 10px;
+}
+
+.create-income-container button:hover {
+  background-color: #263238; /* Darker grey on hover */
+}
+
+.create-income-container .category-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between dropdown and button */
+}
+
+.create-income-container .category-button {
+  margin-left: 10px; /* Space between dropdown and button */
+}
+
+.create-income-container .submit-button {
+  margin-top: 20px; /* Space above the submit button */
+  background-color: #009688; /* Calm teal background */
+  color: #ffffff; /* White text */
+  transition: transform 0.3s ease;
+}
+
+.create-income-container .submit-button:hover {
+  background-color: #00796b; /* Darker teal on hover */
+  transform: scale(1.1);
+}
+
+.income-card {
+  background-color: #ffffff; /* White background */
+  border: 1px solid #e0e0e0; /* Light grey border */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 15px; /* Padding inside the card */
+  margin-bottom: 20px; /* Space between cards */
+  width: 100%; /* Full width of parent container */
+  max-width: 300px; /* Limit the maximum width */
+}
+
+.income-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0; /* Light grey bottom border */
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.income-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.income-amount {
+  font-size: 18px;
+  color: #388e3c; /* Green color for amount */
+}
+
+.income-details {
+  font-size: 16px;
+  color: #333; /* Darker text color */
+  display: flex;
+}
+
+.income-category {
+  margin-bottom: 10px; /* Space between category and other details */
+}
+
+.income-description {
+  margin-bottom: 15px; /* Space between description and date */
+  font-style: italic;
+}
+
+.income-date {
+  color: #666; /* Lighter color for date */
+}
+
+.income-display-container {
+  width: 100%;
+  max-width: 30%;
+  max-height: calc(
+    100vh - 9vh - 40px
+  ); /* Subtract height of total income and margin/padding */
+  overflow-y: scroll;
+}
+
+.income-delete-btn {
+  background-color: #ff4d4d; /* Red color for delete button */
+  color: white; /* White text color */
+  border: none; /* No border */
+  border-radius: 4px; /* Slightly rounded corners */
+  padding: 10px 20px; /* Padding around the text */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+  margin: 20px 37px;
+}
+
+.income-delete-btn:hover {
+  background-color: #e60000; /* Darker red on hover */
+}
+
+.income-delete-btn:active {
+  background-color: #b30000; /* Even darker red when the button is pressed */
+}
+
+/*Category modal styling*/
+.category-modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(49, 49, 49, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.category-modal-container {
+  max-width: 600px;
+  width: 100%;
+  background-color: #2f3e46; /* Dark slate blue background */
+  box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.175);
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  color: #fff;
+}
+
+.category-modal-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.category-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #394867;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #2c3e50; /* Dark grey border */
+}
+
+.category-item span {
+  color: #fff;
+}
+
+.delete-category-btn {
+  background-color: #ff4d4d; /* Red color for delete button */
+  color: white; /* White text color */
+  border: none; /* No border */
+  border-radius: 4px; /* Slightly rounded corners */
+  padding: 5px 10px; /* Padding around the text */
+  font-size: 14px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.delete-category-btn:hover {
+  background-color: #e60000; /* Darker red on hover */
+}
+
+.create-category {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.create-category input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-top: 23px;
+}
+
+.create-category button {
+  background-color: #37474f; /* Dark grey background */
+  color: #ffffff; /* White text */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px 15px; /* Padding inside button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s ease; /* Smooth background transition */
+}
+
+.create-category button:hover {
+  background-color: #263238; /* Darker grey on hover */
+}
+
+.close-modal-btn {
+  background-color: #009688; /* Calm teal background */
+  color: #ffffff; /* White text */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px 15px; /* Padding inside button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background 0.3s ease; /* Smooth background transition */
+  margin-top: 10px;
+}
+
+.close-modal-btn:hover {
+  background-color: #00796b; /* Darker teal on hover */
+}
+
+.empty-income-display-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 40px;
+}

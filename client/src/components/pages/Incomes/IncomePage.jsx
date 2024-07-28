@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Navbar from "../../navbar/Navbar";
-import DashboardContent from "./DashboardContent";
-import "./Dashboard.css";
+import IncomeContent from "./IncomeContent";
 
-const Dashboard = (props) => {
+const IncomePage = (props) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const toggleSidebar = () => {
@@ -18,12 +17,10 @@ const Dashboard = (props) => {
         setAuth={props.setAuth}
       ></Navbar>
       <div className="content">
-        <DashboardContent
-          isAuthenticated={props.isAuthenticated}
-        ></DashboardContent>
+        <IncomeContent isAuthenticated={props.isAuthenticated}></IncomeContent>
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default IncomePage;
