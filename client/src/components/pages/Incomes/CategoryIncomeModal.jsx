@@ -7,7 +7,7 @@ const CategoryIncomeModal = (props) => {
   if (!props.showModal) {
     return null;
   }
-  const [categories, setCategories] = useState([{ id: 1, name: "Test" }]);
+  const [categories, setCategories] = useState([]);
   const [newCategory, setNewCategory] = useState("");
 
   const fetchCategories = async () => {
