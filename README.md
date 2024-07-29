@@ -1,4 +1,4 @@
-### Personal Finance Tracker
+# Personal Finance Tracker
 
 ## Overview
 
@@ -106,12 +106,25 @@ docker-compose up --build
 
 ## Screenshots
 
-# Dashboard
+### Dashboard
 
-# Add Income
+![Dashboard](screenshots/dashboardLoggedIn.png)
+![Dashboard](screenshots/dashboardBlur.png)
 
-# Add Expense
+### Add Income
 
-# Transactions
+![Add Income](screenshots/income.png)
 
-# Login/Registration
+### Add Expense
+
+![Add Expense](screenshots/expense.png)
+![Add Expense modal](screenshots/expenseCategories.png)
+
+### Transactions
+
+![View all transactions](screenshots/allTransactions.png)
+
+### Login/Registration
+
+![Login page](screenshots/login.png)
+![Registration page](screenshots/register.png)
