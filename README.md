@@ -4,6 +4,31 @@
 
 This Personal Finance Tracker is a web application designed to help users manage their incomes and expenses. Users can add, view, and categorize their financial transactions, as well as visualize their financial data through various charts and reports.
 
+## Screenshots
+
+### Dashboard
+
+![Dashboard](screenshots/dashboardLoggedIn.png)
+![Dashboard](screenshots/dashboardBlur.png)
+
+### Add Income
+
+![Add Income](screenshots/income.png)
+
+### Add Expense
+
+![Add Expense](screenshots/expense.png)
+![Add Expense modal](screenshots/expenseCategories.png)
+
+### Transactions
+
+![View all transactions](screenshots/allTransactions.png)
+
+### Login/Registration
+
+![Login page](screenshots/login.png)
+![Registration page](screenshots/register.png)
+
 ## Features
 
 - User authentication (login and registration)
@@ -103,28 +128,3 @@ docker-compose up --build
 2. Register a new user or log in with your credentials, or explore the app without logging in.
 3. Add income and expense entries through the dashboard.
 4. View and analyze your financial data with the provided charts and reports.
-
-## Screenshots
-
-### Dashboard
-
-![Dashboard](screenshots/dashboardLoggedIn.png)
-![Dashboard](screenshots/dashboardBlur.png)
-
-### Add Income
-
-![Add Income](screenshots/income.png)
-
-### Add Expense
-
-![Add Expense](screenshots/expense.png)
-![Add Expense modal](screenshots/expenseCategories.png)
-
-### Transactions
-
-![View all transactions](screenshots/allTransactions.png)
-
-### Login/Registration
-
-![Login page](screenshots/login.png)
-![Registration page](screenshots/register.png)
